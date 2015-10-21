@@ -20,3 +20,5 @@ You need to get the gesture.key file from android hidden system folder and extra
 __Sample Run__
 
 ![sample run](http://imgur.com/gTkzJ6p.png)
+
+![sample](http://i.imgur.com/rlnoKvL.png)
