@@ -17,6 +17,7 @@ package androidgesturecrack;
 
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
@@ -48,23 +49,23 @@ public class AndroidGestureCrack {
         if (args.length == 2) {
             Path gesturePath = Paths.get(args[0]);
             Path dictionaryPath = Paths.get(args[1]);
-            if (Files.size(gesturePath) != 20) {
-                System.err.println("\ngesture.key file is not in proper format.");
-            } else {
-                if (Files.exists(gesturePath) && Files.exists(dictionaryPath)) {
-                    byte[] gestureKey = Files.readAllBytes(gesturePath);
-                    final String gestureHash = byteArraytoHexString(gestureKey);
-                    System.out.println("\n\nYour Gesture Hash is: " + gestureHash);
-                    try (Stream<String> stream = Files.lines(dictionaryPath)) {
-                        stream.skip(5)
-                                .map(line -> line.split(";"))
-                                .filter(dictData -> gestureHash.equals(dictData[2]))
-                                .findFirst()
-                                .ifPresent(dictData -> System.out.println("\n\nYour Gesture Unlock Code is: " + dictData[0]));
-                    }
-                } else {
-                    System.err.println("\nUnable to find the gesture.key or dictionary file");
-                }
+            if (!Files.exists(gesturePath)) {
+                throw new NoSuchFileException("gesture.key file not found.");
+            } else if (Files.size(gesturePath) != 20) {
+                throw new IllegalArgumentException("gesture.key file size is not in proper format.");
+            }
+            if (!Files.exists(dictionaryPath)) {
+                throw new NoSuchFileException("dictionary file not found");
+            }
+            byte[] gestureKey = Files.readAllBytes(gesturePath);
+            final String gestureHash = byteArraytoHexString(gestureKey);
+            System.out.println("\nYour Gesture Hash is: " + gestureHash);
+            try (Stream<String> stream = Files.lines(dictionaryPath)) {
+                stream.skip(5)
+                        .map(line -> line.split(";"))
+                        .filter(dictData -> gestureHash.equals(dictData[2]))
+                        .findFirst()
+                        .ifPresent(dictData -> System.out.println("\nYour Gesture Unlock Code is: " + dictData[0]));
             }
         } else {
             System.err.println("\nRequired exactly two command line arguments");
