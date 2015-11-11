@@ -210,6 +210,6 @@ public class AGCGui extends JFrame {
         developer.setBounds(250, 280, 230, 40);
         panel.add(developer);
 
-        add(panel); //Add Panel to JFrame
+        setContentPane(panel); //Add Panel to JFrame
     }
 }
