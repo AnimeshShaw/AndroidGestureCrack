@@ -22,6 +22,6 @@ Java Version 8 or higher is required to compile the code. You can download the l
 
 __Sample Run__
 
-![sample run](https://i.imgur.com/czmRXUp.png)
+![sample run](https://i.imgur.com/WJICRtw.png)
 
 ![sample](http://i.imgur.com/rlnoKvL.png)
