@@ -1,54 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
     <title>Androidgesturecrack by AnimeshShaw</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
   </head>
+
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/AnimeshShaw/AndroidGestureCrack">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/AnimeshShaw/AndroidGestureCrack/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/AnimeshShaw/AndroidGestureCrack/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
 
-    <div class="wrapper">
+    <header>
+      <div class="container">
+        <h1>Androidgesturecrack</h1>
+        <h2>Cracks Android Screenlock Gesture Pattern using dictionary Attack</h2>
 
-      <section>
-        <div id="title">
-          <h1>Androidgesturecrack</h1>
-          <p>Cracks Android Screenlock Gesture Pattern using dictionary Attack</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/AnimeshShaw">AnimeshShaw</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+        <section id="downloads">
+          <a href="https://github.com/AnimeshShaw/AndroidGestureCrack/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/AnimeshShaw/AndroidGestureCrack/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/AnimeshShaw/AndroidGestureCrack" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
+    <div class="container">
+      <section id="main_content">
         <h1>
 <a id="androidgesturecrack" class="anchor" href="#androidgesturecrack" aria-hidden="true"><span class="octicon octicon-link"></span></a>AndroidGestureCrack</h1>
 
-<p>Cracks Android Screenlock Gesture Pattern using dictionary Attack</p>
+<p>Cracks Android Screenlock Gesture Pattern using Dictionary Attack</p>
 
 <h2>
 <a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
 
-<p>A Java tool to crack the Gesture Screenlock pattern of an Android Phone. Android's pattern lock contains a SHA1 hash of the pattern in a gesture.key file in /data/system folder in the internal memory of the android. It has been tested on Android API Level 15 and up, but should work with lower versions as well. I am not exactly sure if the location of the gesture.key is same in all flavors of Android. As long as you extract the gesture.key file this tool will work well.</p>
+<p>A Java tool to crack the Gesture Screenlock pattern of an Android Phone. Android's pattern lock contains a SHA1 hash of the pattern in a gesture.key file in /data/system folder in the internal memory of the android. It has been tested on Android API Level 15 and up, but should work with lower versions as well. As long as you extract the <strong>gesture.key</strong> file this tool will work</p>
 
-<p>The key is a SHA1 hash of the sequence of bytes of the pattern. The hash is unsalted and hence very easy to crack. The code uses the dictionary which you can download from the link below:-</p>
+<p>The key is a SHA1 hash of the sequence of bytes for the gesture pattern. The hash is unsalted and hence is easier to crack. The code uses the dictionary which you can download from the link below:-</p>
 
 <h6>
 <a id="download-dictionary" class="anchor" href="#download-dictionary" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://www.android-forensics.com/tools/AndroidGestureSHA1.rar">Download Dictionary</a>
@@ -57,23 +47,23 @@
 <h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>You need to get the gesture.key file from android hidden system folder and extract the dictionary file from link above. Use them in the following way:</p>
+<p>You need to get the gesture.key file from android hidden system folder and extract the dictionary file from link above. In the sample folder a gesture.key file has been provided for demo testing of this tool. Use them in the following way (--gui brings up the GUI for this tool):</p>
 
-<pre><code>javac androidgesturecrack\AndroidGestureCrack.java
-java androidgesturecrack.AndroidGestureCrack gesture.key AndroidGestureSHA1.txt
+<pre><code>java -jar AndroidGestureCrack.jar --gui
+                or
+java -jar AndroidGestureCrack.jar gesture.key AndroidGestureSHA1.txt
 </code></pre>
 
-<p>Java Version 8 or higher is required to compile the code.</p>
+<p>Java Version 8 or higher is required to compile the code. You can download the latest release (executable jar) <a href="https://github.com/AnimeshShaw/AndroidGestureCrack/releases/download/v2.0-beta/AndroidGestureCrack.jar">from here</a></p>
 
 <p><strong>Sample Run</strong></p>
 
-<p><img src="http://imgur.com/gTkzJ6p.png" alt="sample run"></p>
+<p><img src="https://i.imgur.com/WJICRtw.png" alt="sample run"></p>
 
 <p><img src="http://i.imgur.com/rlnoKvL.png" alt="sample"></p>
       </section>
-
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
   </body>
 </html>
