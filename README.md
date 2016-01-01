@@ -1,6 +1,6 @@
 # AndroidGestureCrack
 
-Cracks Android Screenlock Gesture Pattern using Dictionary Attack
+Cracks Android Gesture Screenlock Pattern using Dictionary Attack
 
 ## Description
 
@@ -14,9 +14,9 @@ The key is a SHA1 hash of the sequence of bytes for the gesture pattern. The has
 
 You need to get the gesture.key file from android hidden system folder and extract the dictionary file from link above. In the sample folder a gesture.key file has been provided for demo testing of this tool. Use them in the following way (--gui brings up the GUI for this tool):
 
-    java -jar AndroidGestureCrack.jar --gui
+    java -jar AndroidGestureCrack-2.1-Beta.jar --gui
                     or
-    java -jar AndroidGestureCrack.jar gesture.key AndroidGestureSHA1.txt
+    java -jar AndroidGestureCrack-2.1-Beta.jar gesture.key AndroidGestureSHA1.txt
 
 Java Version 8 or higher is required to compile the code. You can download the latest release (executable jar) [from here](https://github.com/AnimeshShaw/AndroidGestureCrack/releases/download/v2.0-beta/AndroidGestureCrack.jar)
 
