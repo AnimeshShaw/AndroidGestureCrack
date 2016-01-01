@@ -13,12 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.psychocoder.androidgesturecrack.tool;
+package net.letshackit.androidgesturecrack.tool;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.HeadlessException;
+import net.letshackit.androidgesturecrack.AndroidGestureCrack;
+
+import javax.swing.*;
+import javax.swing.UIManager.LookAndFeelInfo;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
@@ -26,21 +29,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UIManager.LookAndFeelInfo;
-import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.filechooser.FileFilter;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import net.psychocoder.androidgesturecrack.AndroidGestureCrack;
 
 /**
  *
@@ -81,8 +69,8 @@ public class AGCGui extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setTitle("Android Gesture Crack v2.0");
-        URL iconUrl = getClass().getResource("andro_crack.jpg");
+        setTitle("Android Gesture Crack v2.1");
+        URL iconUrl = getClass().getResource("images/andro_crack.jpg");
         setIconImage(new ImageIcon(iconUrl).getImage());
 
         try {
@@ -105,7 +93,7 @@ public class AGCGui extends JFrame {
         panel.setLayout(null);
         panel.setBackground(Color.BLACK);
 
-        titleLabel = new JLabel("Android Gesture Crack Tool v2.0");
+        titleLabel = new JLabel("Android Gesture Crack Tool v2.1");
         titleLabel.setForeground(Color.WHITE);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
         titleLabel.setBounds(10, 10, 350, 40);

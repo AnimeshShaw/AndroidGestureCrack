@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.psychocoder.androidgesturecrack;
+package net.letshackit.androidgesturecrack;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,7 +33,7 @@ import java.util.stream.Stream;
  * http://www.android-forensics.com/tools/AndroidGestureSHA1.rar
  *
  * @author Psycho_Coder (psychocoder@outlook.com)
- * @version 0.1
+ * @version 2.1
  */
 public class AndroidGestureCrack {
 
@@ -68,8 +68,7 @@ public class AndroidGestureCrack {
         }
     }
 
-    public void crack(String pathGesture, String pathDictionary)
-            throws NoSuchFileException, IOException {
+    public void crack(String pathGesture, String pathDictionary) throws IOException {
         Path gesturePath = Paths.get(pathGesture);
         Path dictionaryPath = Paths.get(pathDictionary);
         if (!Files.exists(gesturePath)) {

@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.psychocoder.androidgesturecrack.tool;
+package net.letshackit.androidgesturecrack.tool;
 
-import java.io.IOException;
+import net.letshackit.androidgesturecrack.AndroidGestureCrack;
+
 import javax.swing.SwingUtilities;
-import net.psychocoder.androidgesturecrack.AndroidGestureCrack;
+import java.io.IOException;
 
 /**
  *
@@ -27,9 +28,7 @@ public class AppMain {
 
     public static void main(String[] args) throws IOException {
         if (args.length == 1 && args[0].equalsIgnoreCase("--gui")) {
-            SwingUtilities.invokeLater(() -> {
-                new AGCGui(500, 350).setVisible(true);
-            });
+            SwingUtilities.invokeLater(() -> new AGCGui(500, 350).setVisible(true));
         } else if (args.length == 2 && !args[0].equalsIgnoreCase("--gui")) {
             AndroidGestureCrack agc = new AndroidGestureCrack();
             agc.crack(args[0], args[1]);
@@ -38,8 +37,8 @@ public class AppMain {
         } else {
             System.out.println(System.getProperty("user.dir"));
             System.err.println("Required exactly two command line arguments\n");
-            System.out.print("Usage: java -jar AndroidGestureCrack.jar gesture.key AndroidGestureSHA1.txt\n\t\tor");
-            System.out.print("\nUsage: java -jar AndroidGestureCrack.jar --gui\n");
+            System.out.print("Usage: java -jar AndroidGestureCrack-2.1-Beta.jar gesture.key AndroidGestureSHA1.txt\n\t\tor");
+            System.out.print("\nUsage: java -jar AndroidGestureCrack-2.1-Beta.jar --gui\n");
         }
     }
 
